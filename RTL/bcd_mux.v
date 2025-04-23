@@ -43,16 +43,17 @@ module bcd_mux #
    assign o_bcd_muxed = bcd_out;
    
    assign bcd_sel = {{(DISPLAYS_NUM-1){1'b0}},1'b1} << r_display_count;
-      
+   
+   function integer clogb2;
+   input integer value;
+   begin
+       value = value - 1;
+       for (clogb2 = 0; value > 0; clogb2 = clogb2 + 1) begin
+           value = value >> 1;
+       end
+   end
+endfunction 
 endmodule    
 
-function integer clogb2;
-    input integer value;
-    begin
-        value = value - 1;
-        for (clogb2 = 0; value > 0; clogb2 = clogb2 + 1) begin
-            value = value >> 1;
-        end
-    end
-endfunction 
+
               
