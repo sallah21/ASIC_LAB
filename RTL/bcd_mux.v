@@ -16,7 +16,7 @@ module bcd_mux #
    wire [clogb2(MULTIPLEX_CLK_COUNT)-1:0] sel_counter;
    wire                                   allow_display_count;
                                                      
-   always @ (posedge i_clk)
+   always @ (posedge i_clk or negedge i_rst)
         if (!i_rst) r_sel_counter <= 0;
          else
             begin
@@ -26,10 +26,10 @@ module bcd_mux #
    
    assign allow_display_count = (r_sel_counter == (MULTIPLEX_CLK_COUNT-1)) ? 1 : 0;
    
-   reg [clogb2(DISPLAYS_NUM)-1:0] r_display_count;
+   reg [clogb2(DISPLAYS_NUM)-1:0]  r_display_count;
    wire [0:3]                      bcd_out;
    
-   always @ (posedge i_clk)
+   always @ (posedge i_clk or negedge i_rst)
         if (!i_rst) r_display_count <= 0;
          else
             begin
