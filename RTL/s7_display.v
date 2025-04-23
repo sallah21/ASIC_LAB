@@ -4,7 +4,7 @@ module s7_display #
     parameter MLT_CNT = 10
 )
 (
-    input                           i_clk, // clock
+    input                           clk_i, // clock
     input                           i_rst, // reset
     input  [(DIS_NUM*4) - 1:0] i_bcd_data, // bcd data input
     
@@ -22,7 +22,7 @@ module s7_display #
  )
  U_bcd_mux
  (
-   .i_clk         (i_clk),
+   .clk_i         (clk_i),
    .i_rst         (i_rst),
    .i_bcd_data    (i_bcd_data),
    

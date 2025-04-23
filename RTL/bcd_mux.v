@@ -4,7 +4,7 @@ module bcd_mux #
     parameter MLT_CNT = 10
 )
 (
-    input                           i_clk, // clock
+    input                           clk_i, // clock
     input                           i_rst, // reset
     input  [(DIS_NUM*4) - 1:0] i_bcd_data, // bcd data input
     
@@ -16,7 +16,7 @@ module bcd_mux #
    wire [clogb2(MLT_CNT)-1:0] sel_counter;
    wire                                   allow_display_count;
                                                      
-   always @ (posedge i_clk or negedge i_rst)
+   always @ (posedge clk_i or negedge i_rst)
         if (!i_rst) r_sel_counter <= 0;
          else
             begin
@@ -31,7 +31,7 @@ module bcd_mux #
     wire [0:3]                      bcd_out;
     
     wire [DIS_NUM-1:0]         bcd_sel;
-    always @ (posedge i_clk or negedge i_rst)
+    always @ (posedge clk_i or negedge i_rst)
             if (!i_rst) r_display_count <= 0;
             else
                 begin
