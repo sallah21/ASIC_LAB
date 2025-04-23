@@ -1,24 +1,24 @@
 module s7_display #
 (
-    parameter DISPLAYS_NUM = 4,
-    parameter MULTIPLEX_CLK_COUNT = 10
+    parameter DIS_NUM = 4,
+    parameter MLT_CNT = 10
 )
 (
     input                           i_clk,
     input                           i_rst,
-    input  [(DISPLAYS_NUM*4) - 1:0] i_bcd_data,
+    input  [(DIS_NUM*4) - 1:0] i_bcd_data,
     
     output [6:0]                    o_segments,
-    output [DISPLAYS_NUM-1:0]       o_segments_sel
+    output [DIS_NUM-1:0]       o_segments_sel
 );
  
  wire [3:0]              bcd_muxed;
- wire [DISPLAYS_NUM-1:0] bcd_sel;
+ wire [DIS_NUM-1:0] bcd_sel;
  wire [6:0]              segments;
  bcd_mux #
  (
-   .DISPLAYS_NUM        (DISPLAYS_NUM),
-   .MULTIPLEX_CLK_COUNT (MULTIPLEX_CLK_COUNT)   
+   .DIS_NUM        (DIS_NUM),
+   .MLT_CNT (MLT_CNT)   
  )
  U_bcd_mux
  (

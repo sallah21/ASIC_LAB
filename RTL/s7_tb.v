@@ -4,7 +4,7 @@ module s7_tb
 (
 );
  parameter DISPLAYS_NUM        = 4;  //number of the 7s displays
- parameter MULTIPLEX_CLK_COUNT = 10; //single display activity time in clocks cycles
+ parameter MLT_CNT = 10; //single display activity time in clocks cycles
 
  parameter CLK_F_HZ            = 1000; //clock freq in HZ
  parameter CLK_T               = 10000 / CLK_F_HZ; 
@@ -23,8 +23,8 @@ module s7_tb
 
 s7_display #
 (
-  .DISPLAYS_NUM (DISPLAYS_NUM),
-  .MULTIPLEX_CLK_COUNT (MULTIPLEX_CLK_COUNT)
+  .DIS_NUM (DISPLAYS_NUM),
+  .MLT_CNT (MLT_CNT)
 )
 s7_display_i
 (
@@ -47,14 +47,14 @@ assign ascii = segments_to_ascii(segments);
            rst = 1'b0;
            bcd_in  = {(DISPLAYS_NUM*4){1'b0}};
            
-           #(MULTIPLEX_CLK_COUNT*CLK_T*DISPLAYS_NUM+CLK_T)
+           #(MLT_CNT*CLK_T*DISPLAYS_NUM+CLK_T)
            rst = 1'b1;
            //#10000 $finish;
     end
     
     always #(CLK_T/2) clk = ~clk; //clock
     
-    always #(MULTIPLEX_CLK_COUNT*CLK_T*DISPLAYS_NUM) //stymulus bcd input code
+    always #(MLT_CNT*CLK_T*DISPLAYS_NUM) //stymulus bcd input code
         begin
             bcd_in[3:0] = bcd_in[3:0] + 1;
             
