@@ -4,3 +4,210 @@ read_file -type sourcelist filelist.f
 set_option enableSV yes
 # Started at 12:07:56, Completed at 12:07:56 (Elapsed time = 00:00:00.040)
 
+set_option top "s7_display.v"
+# Started at 12:18:08, Completed at 12:18:08 (Elapsed time = 00:00:00.030)
+
+current_goal lint/lint_rtl -top s7_display.v
+# Started at 12:20:20, Completed at 12:20:21 (Elapsed time = 00:00:01.660)
+
+current_goal lint/lint_rtl -top s7_display.v
+# Started at 12:21:51, Completed at 12:21:51 (Elapsed time = 00:00:00.009)
+
+run_goal
+# Started at 12:21:51, Completed at 12:21:58 (Elapsed time = 00:00:07.230)
+
+current_goal lint/lint_rtl_enhanced -top s7_display.v
+# Started at 12:21:58, Completed at 12:22:00 (Elapsed time = 00:00:01.560)
+
+run_goal
+# Started at 12:22:00, Completed at 12:22:05 (Elapsed time = 00:00:05.719)
+
+current_goal lint/lint_turbo_rtl -top s7_display.v
+# Started at 12:22:05, Completed at 12:22:07 (Elapsed time = 00:00:01.579)
+
+run_goal
+# Started at 12:22:07, Completed at 12:22:12 (Elapsed time = 00:00:05.689)
+
+current_goal lint/lint_functional_rtl -top s7_display.v
+# Started at 12:22:12, Completed at 12:22:13 (Elapsed time = 00:00:01.189)
+
+run_goal
+# Started at 12:22:13, Completed at 12:22:15 (Elapsed time = 00:00:02.039)
+
+current_goal lint/lint_abstract -top s7_display.v
+# Started at 12:22:15, Completed at 12:22:16 (Elapsed time = 00:00:00.600)
+
+run_goal
+# Started at 12:22:16, Completed at 12:22:21 (Elapsed time = 00:00:05.670)
+
+current_goal lint/lint_rtl -top s7_display.v
+# Started at 12:22:21, Completed at 12:22:23 (Elapsed time = 00:00:01.649)
+
+current_goal lint/lint_rtl_enhanced -top s7_display.v
+# Started at 12:22:48, Completed at 12:22:50 (Elapsed time = 00:00:01.630)
+
+current_goal lint/lint_rtl -top s7_display.v
+# Started at 12:22:52, Completed at 12:22:54 (Elapsed time = 00:00:01.670)
+
+gui_select_message -rule STX_VE_606 -msg {Identifier ( bcd ) not declared in current scope}
+# Started at 12:22:59, Completed at 12:22:59 (Elapsed time = 00:00:00.000)
+
+gui_select_message -rule STX_VE_274 -msg {Param assignment list is incomplete}
+# Started at 12:23:39, Completed at 12:23:39 (Elapsed time = 00:00:00.000)
+
+run_goal
+# Started at 12:28:32, Completed at 12:28:39 (Elapsed time = 00:00:06.960)
+
+run_goal
+# Started at 12:29:53, Completed at 12:29:59 (Elapsed time = 00:00:06.939)
+
+gui_select_message -rule CMD_top -msg {top 's7_display.v' : Design unit not found in the design}
+# Started at 12:30:04, Completed at 12:30:04 (Elapsed time = 00:00:00.000)
+
+current_goal lint/lint_rtl -top s7_display.v
+# Started at 12:30:13, Completed at 12:30:13 (Elapsed time = 00:00:00.000)
+
+run_goal
+# Started at 12:30:13, Completed at 12:30:19 (Elapsed time = 00:00:06.390)
+
+current_goal lint/lint_rtl_enhanced -top s7_display.v
+# Started at 12:30:19, Completed at 12:30:20 (Elapsed time = 00:00:01.680)
+
+run_goal
+# Started at 12:30:20, Completed at 12:30:26 (Elapsed time = 00:00:06.000)
+
+current_goal lint/lint_turbo_rtl -top s7_display.v
+# Started at 12:30:26, Completed at 12:30:28 (Elapsed time = 00:00:01.680)
+
+run_goal
+# Started at 12:30:28, Completed at 12:30:33 (Elapsed time = 00:00:05.120)
+
+current_goal lint/lint_functional_rtl -top s7_display.v
+# Started at 12:30:33, Completed at 12:30:35 (Elapsed time = 00:00:01.099)
+
+run_goal
+# Started at 12:30:35, Completed at 12:30:36 (Elapsed time = 00:00:01.250)
+
+current_goal lint/lint_abstract -top s7_display.v
+# Started at 12:30:36, Completed at 12:30:37 (Elapsed time = 00:00:00.609)
+
+run_goal
+# Started at 12:30:37, Completed at 12:30:43 (Elapsed time = 00:00:04.879)
+
+current_goal lint/lint_rtl -top s7_display.v
+# Started at 12:30:43, Completed at 12:30:44 (Elapsed time = 00:00:01.700)
+
+gui_select_message -rule CMD_top -msg {top 's7_display.v' : Design unit not found in the design}
+# Started at 12:31:00, Completed at 12:31:00 (Elapsed time = 00:00:00.000)
+
+set_option top "s7_display.v"
+# Started at 12:31:53, Completed at 12:31:53 (Elapsed time = 00:00:00.030)
+
+set_option top "s7_display.v"
+# Started at 12:32:08, Completed at 12:32:08 (Elapsed time = 00:00:00.010)
+
+current_goal Design_Read -top s7_display.v
+# Started at 12:32:15, Completed at 12:32:16 (Elapsed time = 00:00:00.530)
+
+remove_option top
+# Started at 12:32:23, Completed at 12:32:23 (Elapsed time = 00:00:00.030)
+
+current_goal Design_Read -top s7_display.v
+# Started at 12:32:26, Completed at 12:32:26 (Elapsed time = 00:00:00.010)
+
+set_option top "s7_display.v"
+# Started at 12:32:31, Completed at 12:32:31 (Elapsed time = 00:00:00.030)
+
+current_goal lint/lint_rtl -top s7_display.v
+# Started at 12:32:37, Completed at 12:32:39 (Elapsed time = 00:00:01.480)
+
+run_goal
+# Started at 12:32:39, Completed at 12:32:45 (Elapsed time = 00:00:05.200)
+
+current_goal lint/lint_rtl_enhanced -top s7_display.v
+# Started at 12:32:45, Completed at 12:32:46 (Elapsed time = 00:00:01.689)
+
+run_goal
+# Started at 12:32:46, Completed at 12:32:52 (Elapsed time = 00:00:05.129)
+
+current_goal lint/lint_turbo_rtl -top s7_display.v
+# Started at 12:32:52, Completed at 12:32:54 (Elapsed time = 00:00:01.709)
+
+run_goal
+# Started at 12:32:54, Completed at 12:33:00 (Elapsed time = 00:00:05.239)
+
+current_goal lint/lint_functional_rtl -top s7_display.v
+# Started at 12:33:00, Completed at 12:33:01 (Elapsed time = 00:00:01.139)
+
+run_goal
+# Started at 12:33:01, Completed at 12:33:03 (Elapsed time = 00:00:01.270)
+
+current_goal lint/lint_abstract -top s7_display.v
+# Started at 12:33:03, Completed at 12:33:03 (Elapsed time = 00:00:00.600)
+
+run_goal
+# Started at 12:33:03, Completed at 12:33:09 (Elapsed time = 00:00:04.900)
+
+current_goal lint/lint_rtl -top s7_display.v
+# Started at 12:33:09, Completed at 12:33:11 (Elapsed time = 00:00:01.680)
+
+gui_select_message -rule CMD_top -msg {top 's7_display.v' : Design unit not found in the design}
+# Started at 12:33:17, Completed at 12:33:17 (Elapsed time = 00:00:00.000)
+
+current_goal lint/lint_rtl_enhanced -top s7_display.v
+# Started at 12:33:33, Completed at 12:33:35 (Elapsed time = 00:00:01.819)
+
+read_file -type verilog {RTL/bcd_mux.v RTL/decoder.v}
+# Started at 12:33:58, Completed at 12:33:58 (Elapsed time = 00:00:00.009)
+
+read_file -type sgdc RTL/s7.sgdc
+# Started at 12:33:58, Completed at 12:33:58 (Elapsed time = 00:00:00.000)
+
+read_file -type verilog {RTL/s7_display.v RTL/s7_tb.v}
+# Started at 12:33:58, Completed at 12:33:58 (Elapsed time = 00:00:00.009)
+
+current_goal none
+# Started at 12:34:08, Completed at 12:34:08 (Elapsed time = 00:00:00.160)
+
+remove_option top
+# Started at 12:34:08, Completed at 12:34:08 (Elapsed time = 00:00:00.009)
+
+set_option top "s7_display.v"
+# Started at 12:34:27, Completed at 12:34:27 (Elapsed time = 00:00:00.000)
+
+current_goal lint/lint_rtl -top s7_display.v
+# Started at 12:34:33, Completed at 12:34:34 (Elapsed time = 00:00:01.460)
+
+run_goal
+# Started at 12:34:34, Completed at 12:34:40 (Elapsed time = 00:00:05.290)
+
+current_goal lint/lint_rtl_enhanced -top s7_display.v
+# Started at 12:34:40, Completed at 12:34:42 (Elapsed time = 00:00:01.710)
+
+run_goal
+# Started at 12:34:42, Completed at 12:34:47 (Elapsed time = 00:00:05.349)
+
+current_goal lint/lint_turbo_rtl -top s7_display.v
+# Started at 12:34:47, Completed at 12:34:49 (Elapsed time = 00:00:01.719)
+
+run_goal
+# Started at 12:34:49, Completed at 12:34:55 (Elapsed time = 00:00:05.330)
+
+current_goal lint/lint_functional_rtl -top s7_display.v
+# Started at 12:34:55, Completed at 12:34:56 (Elapsed time = 00:00:01.120)
+
+run_goal
+# Started at 12:34:56, Completed at 12:34:58 (Elapsed time = 00:00:01.250)
+
+current_goal lint/lint_abstract -top s7_display.v
+# Started at 12:34:58, Completed at 12:34:59 (Elapsed time = 00:00:00.609)
+
+run_goal
+# Started at 12:34:59, Completed at 12:35:04 (Elapsed time = 00:00:05.009)
+
+current_goal lint/lint_rtl -top s7_display.v
+# Started at 12:35:04, Completed at 12:35:06 (Elapsed time = 00:00:01.689)
+
+save_project -force /home/student/Documents/DS/ASIC/lab1/dupa
+# Started at 12:35:42, Completed at 12:35:42 (Elapsed time = 00:00:00.000)
+

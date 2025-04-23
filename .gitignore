@@ -1,2 +1,6 @@
 spyglass-1/
 *.log
+csrc/
+*.xlist
+*.xlist.*
+*.fsdb.*

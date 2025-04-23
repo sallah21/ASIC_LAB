@@ -1,0 +1,53 @@
+#!SPYGLASS_PROJECT_FILE
+#!VERSION 3.0
+#  -------------------------------------------------------------------
+#  This is a software generated project file. Manual edits to this file could be lost during the next save operation
+#  Copyright Synopsys Inc.
+#  Last Updated By: SpyGlass SpyGlass_vV-2023.12
+#  Last Updated On Wed Apr 23 14:45:27 2025
+#
+#  -------------------------------------------------------------------
+
+##Data Import Section
+
+read_file -type verilog bcd_mux.v
+#BackRefFile:N.A. #LineNumber:1
+read_file -type verilog decoder.v
+#BackRefFile:N.A. #LineNumber:1
+read_file -type sgdc s7.sgdc
+read_file -type verilog s7_display.v
+#BackRefFile:N.A. #LineNumber:1
+read_file -type verilog s7_tb.v
+#BackRefFile:N.A. #LineNumber:1
+
+##Common Options Section
+
+set_option projectwdir .
+set_option language_mode mixed
+set_option designread_enable_synthesis no
+set_option designread_disable_flatten no
+set_option enableSV no
+set_option top s7_display
+set_option active_methodology $SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff
+
+
+##Goal Setup Section
+
+current_methodology $SPYGLASS_HOME/GuideWare/latest/block/rtl_handoff
+
+
+current_goal lint/lint_rtl -top s7_display
+set_goal_option ignorerules { SigType }
+set_goal_option ignorerules { InvSigType }
+set_goal_option ignorerules { CaseOverIf }
+set_goal_option addrules { TypeCount }
+set_goal_option ignorerules { SignalComment }
+set_goal_option addrules { InstName }
+set_goal_option addrules { NoTab }
+set_goal_option addrules { PortComment }
+set_goal_option addrules { FunctionComment }
+set_goal_option addrules { ClkName }
+set_goal_option addrules { ParamName }
+
+current_methodology $SPYGLASS_HOME/GuideWare/2023.12/block/initial_rtl
+

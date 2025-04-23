@@ -21,20 +21,34 @@ module s7_tb
  
  integer                        i;
 
-s7_display #
+// s7_display #
+// (
+//   .DIS_NUM (DISPLAYS_NUM),
+//   .MLT_CNT (MLT_CNT)
+// )
+// s7_display_i
+// (
+//     .i_clk          (clk),
+//     .i_rst          (rst),
+//     .i_bcd_data     (bcd_in),
+
+//     .o_segments     (segments),
+//     .o_segments_sel (segments_sel)
+// );
+
+ s7_stoper #
 (
-  .DIS_NUM (DISPLAYS_NUM),
-  .MLT_CNT (MLT_CNT)
+  .DISPLAYS_NUM (DISPLAYS_NUM)
 )
-s7_display_i
+s7_stoper_i
 (
     .i_clk          (clk),
     .i_rst          (rst),
-    .i_bcd_data     (bcd_in),
 
     .o_segments     (segments),
     .o_segments_sel (segments_sel)
 );
+
 
 assign ascii = segments_to_ascii(segments);
  
