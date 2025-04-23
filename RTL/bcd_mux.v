@@ -21,7 +21,7 @@ module bcd_mux #
          else
             begin
                 if (r_sel_counter == (MULTIPLEX_CLK_COUNT-1)) r_sel_counter <= 0;
-                else r_sel_counter <= r_sel_counter + 1;;    
+                else r_sel_counter <= r_sel_counter + 1;    
             end
    
     reg [clogb2(DISPLAYS_NUM)-1:0]  r_display_count;
