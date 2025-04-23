@@ -6,9 +6,9 @@ module decoder
 
   reg [6:0]  segments;  
     
-    always @(bcd)
+    always @(i_bcd)
     begin
-        case (bcd)
+        case (i_bcd)
                   0 : segments = 7'b0000001;
                   1 : segments = 7'b1001111;
                   2 : segments = 7'b0010010;
@@ -18,6 +18,7 @@ module decoder
                   7 : segments = 7'b0001111;
                   8 : segments = 7'b0000000;
                   9 : segments = 7'b0000100;
+                  default: segments = 7'b0000000;
         endcase
     end
     

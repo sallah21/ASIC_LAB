@@ -18,7 +18,7 @@ module s7_display #
  bcd_mux #
  (
    .DISPLAYS_NUM        (DISPLAYS_NUM),
-   .MULTIPLEX_CLK_COUNT (MULTIPLEX_CLK_COUNT),   
+   .MULTIPLEX_CLK_COUNT (MULTIPLEX_CLK_COUNT)   
  )
  bcd_mux_i
  (
