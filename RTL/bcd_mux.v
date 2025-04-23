@@ -38,7 +38,7 @@ module bcd_mux #
                     r_display_count <= display_count;
                 end
    assign allow_display_count = (r_sel_counter == (MULTIPLEX_CLK_COUNT-1)) ? 1 : 0;
-   assign bcd_out = i_bcd_data[4*(DISPLAYS_NUM - r_display_count - 1)+:3];
+   assign bcd_out = i_bcd_data[4*(DISPLAYS_NUM - r_display_count - 1)+:4];
 
    assign o_bcd_muxed = bcd_out;
    
