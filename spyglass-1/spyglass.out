@@ -1,0 +1,6 @@
+read_file: info: using default project `spyglass-1.prj'
+read_file -type hdl RTL/s7_tb.v
+read_file -type hdl RTL/s7_display.v
+read_file -type hdl RTL/bcd_mux.v
+read_file -type hdl RTL/decoder.v
+filelist.fyes

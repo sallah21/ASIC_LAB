@@ -1,0 +1,6 @@
+read_file -type sourcelist filelist.f
+# Started at 12:07:32, Completed at 12:07:32 (Elapsed time = 00:00:00.790)
+
+set_option enableSV yes
+# Started at 12:07:56, Completed at 12:07:56 (Elapsed time = 00:00:00.040)
+
