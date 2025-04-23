@@ -20,7 +20,7 @@ module s7_display #
    .DISPLAYS_NUM        (DISPLAYS_NUM),
    .MULTIPLEX_CLK_COUNT (MULTIPLEX_CLK_COUNT)   
  )
- bcd_mux_i
+ U_bcd_mux
  (
    .i_clk         (i_clk),
    .i_rst         (i_rst),
@@ -30,7 +30,7 @@ module s7_display #
    .o_bcd_sel     (bcd_sel)
  );
  
- decoder decoder_i
+ decoder U_decoder
  (
    .i_bcd           (bcd_muxed),
    .o_segments      (segments)
