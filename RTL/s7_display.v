@@ -14,7 +14,7 @@ module s7_display #
  
  wire [3:0]              bcd_muxed;
  wire [DISPLAYS_NUM-1:0] bcd_sel;
- 
+ wire [6:0]              segments;
  bcd_mux #
  (
    .DISPLAYS_NUM        (DISPLAYS_NUM),
