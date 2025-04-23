@@ -17,11 +17,11 @@ module bcd_mux #
    wire                                   allow_display_count;
                                                      
    always @ (posedge i_clk)
-        if (!i_rst) r_sel_counter = 0;
+        if (!i_rst) r_sel_counter <= 0;
          else
             begin
-                if (r_sel_counter == (MULTIPLEX_CLK_COUNT-1)) r_sel_counter = 0;
-                else r_sel_counter = r_sel_counter + 1;;    
+                if (r_sel_counter == (MULTIPLEX_CLK_COUNT-1)) r_sel_counter <= 0;
+                else r_sel_counter <= r_sel_counter + 1;;    
             end
    
    assign allow_display_count = (r_sel_counter == (MULTIPLEX_CLK_COUNT-1)) ? 1 : 0;
@@ -37,8 +37,7 @@ module bcd_mux #
                 else if (r_display_count == DISPLAYS_NUM) r_display_count <= 0;
                 else r_display_count <= r_display_count + 1;
             end
-            
-   
+
    assign bcd_out = i_bcd_data[4*(DISPLAYS_NUM - r_display_count - 1)+:3];
 
    assign o_bcd_muxed = bcd_out;
