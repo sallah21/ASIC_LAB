@@ -45,6 +45,7 @@ module bcd_mux #
    assign bcd_sel = {{(DIS_NUM-1){1'b0}},1'b1} << r_display_count;
    assign o_bcd_sel = bcd_sel;
 
+   // Function to calculate the ceiling of log base 2 of an integer
    function automatic integer clogb2;
    input integer value; // value to be converted
    begin
