@@ -4,12 +4,12 @@ module s7_display #
     parameter MLT_CNT = 10
 )
 (
-    input                           i_clk,
-    input                           i_rst,
-    input  [(DIS_NUM*4) - 1:0] i_bcd_data,
+    input                           i_clk, // clock
+    input                           i_rst, // reset
+    input  [(DIS_NUM*4) - 1:0] i_bcd_data, // bcd data input
     
-    output [6:0]                    o_segments,
-    output [DIS_NUM-1:0]       o_segments_sel
+    output [6:0]                    o_segments, // segments output
+    output [DIS_NUM-1:0]       o_segments_sel // segments select output
 );
  
  wire [3:0]              bcd_muxed;

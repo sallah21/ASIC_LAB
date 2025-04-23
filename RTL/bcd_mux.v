@@ -4,12 +4,12 @@ module bcd_mux #
     parameter MLT_CNT = 10
 )
 (
-    input                           i_clk,
-    input                           i_rst,
-    input  [(DIS_NUM*4) - 1:0] i_bcd_data,
+    input                           i_clk, // clock
+    input                           i_rst, // reset
+    input  [(DIS_NUM*4) - 1:0] i_bcd_data, // bcd data input
     
-    output [3:0]                    o_bcd_muxed,
-    output [DIS_NUM-1:0]       o_bcd_sel
+    output [3:0]                    o_bcd_muxed, // bcd data output
+    output [DIS_NUM-1:0]       o_bcd_sel // bcd select output
 );
  
    reg  [clogb2(MLT_CNT)-1:0] r_sel_counter;
@@ -46,7 +46,7 @@ module bcd_mux #
    assign o_bcd_sel = bcd_sel;
 
    function automatic integer clogb2;
-   input integer value;
+   input integer value; // value to be converted
    begin
        value = value - 1;
        for (clogb2 = 0; value > 0; clogb2 = clogb2 + 1) begin

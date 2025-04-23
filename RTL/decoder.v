@@ -1,7 +1,7 @@
 module decoder
 (
-    input  [3:0]    i_bcd,
-    output [6:0]    o_segments
+    input  [3:0]    i_bcd, // bcd input
+    output [6:0]    o_segments // segments output
 );
 
   reg [6:0]  segments;  
