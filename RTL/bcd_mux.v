@@ -43,6 +43,7 @@ module bcd_mux #
    assign o_bcd_muxed = bcd_out;
    
    assign bcd_sel = {{(DISPLAYS_NUM-1){1'b0}},1'b1} << r_display_count;
+   assign o_bcd_sel = bcd_sel;
 
    function automatic integer clogb2;
    input integer value;
