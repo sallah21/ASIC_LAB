@@ -24,20 +24,20 @@ module bcd_mux #
                 else r_sel_counter <= r_sel_counter + 1;;    
             end
    
+    reg [clogb2(DISPLAYS_NUM)-1:0]  r_display_count;
+    wire [clogb2(DISPLAYS_NUM)-1:0] display_count;
+    assign display_count = (!allow_display_count)? r_display_count :
+                            (r_display_count == DISPLAYS_NUM)? 0 : r_display_count + 1;
+    wire [0:3]                      bcd_out;
+    
+    wire [DISPLAYS_NUM-1:0]         bcd_sel;
+    always @ (posedge i_clk or negedge i_rst)
+            if (!i_rst) r_display_count <= 0;
+            else
+                begin
+                    r_display_count <= display_count;
+                end
    assign allow_display_count = (r_sel_counter == (MULTIPLEX_CLK_COUNT-1)) ? 1 : 0;
-   
-   reg [clogb2(DISPLAYS_NUM)-1:0]  r_display_count;
-   wire [0:3]                      bcd_out;
-   
-   always @ (posedge i_clk or negedge i_rst)
-        if (!i_rst) r_display_count <= 0;
-         else
-            begin
-                if (!allow_display_count) r_display_count <= r_display_count;
-                else if (r_display_count == DISPLAYS_NUM) r_display_count <= 0;
-                else r_display_count <= r_display_count + 1;
-            end
-
    assign bcd_out = i_bcd_data[4*(DISPLAYS_NUM - r_display_count - 1)+:3];
 
    assign o_bcd_muxed = bcd_out;
